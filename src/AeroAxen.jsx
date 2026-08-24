@@ -1,5 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
+// Responsive dashboard layout update
+
 /**
  * AeroAxen Resilience Lab v2
  * Defensive simulation-only prototype for GNSS/PNT integrity and swarm recovery.
