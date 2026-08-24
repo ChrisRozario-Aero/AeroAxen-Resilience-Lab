@@ -1,5 +1,5 @@
-import AeroAxen from "./AeroAxen";
+import Zyrnav from "./Zyrnav";
 
 export default function App() {
-  return <AeroAxen />;
+  return <Zyrnav />;
 }
