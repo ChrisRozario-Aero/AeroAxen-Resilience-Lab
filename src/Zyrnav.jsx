@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 // Responsive dashboard layout update
 
 /**
- * AeroAxen Resilience Lab v2
+ * Zyrnav Resilience Lab v2
  * Defensive simulation-only prototype for GNSS/PNT integrity and swarm recovery.
  *
  * Demonstrates:
@@ -851,7 +851,7 @@ function drawScene(ctx, nodes, phase, config, tick, particlesRef, selectedNodeId
   ctx.fillStyle = COLORS.cyan;
   ctx.font = "bold 24px Courier New";
   ctx.textAlign = "left";
-  ctx.fillText("AEROAXEN RESILIENCE LAB", 42, 56);
+  ctx.fillText("ZYRNAV RESILIENCE LAB", 42, 56);
   ctx.fillStyle = COLORS.dim;
   ctx.font = "11px Courier New";
   ctx.fillText(
@@ -882,7 +882,7 @@ function Sparkline({ data, color }) {
   );
 }
 
-export default function AeroAxen3DSimulation() {
+export default function Zyrnav3DSimulation() {
   const canvasRef = useRef(null);
   const particlesRef = useRef([]);
   const tickRef = useRef(0);
@@ -1066,7 +1066,7 @@ export default function AeroAxen3DSimulation() {
     samples.forEach((sample) => {
       sample.nodes.forEach((n) => {
         rows.push([
-          "AeroAxen_Resilience_Lab_simulated_telemetry",
+          "Zyrnav_Resilience_Lab_simulated_telemetry",
           sample.wall,
           fmt(sample.simTime, 2),
           scenario.label,
@@ -1102,7 +1102,7 @@ export default function AeroAxen3DSimulation() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `aeroaxen_resilience_${scenarioKey.toLowerCase()}_${Date.now()}.csv`;
+    a.download = `zyrnav_resilience_${scenarioKey.toLowerCase()}_${Date.now()}.csv`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -1211,7 +1211,7 @@ export default function AeroAxen3DSimulation() {
         <div className="aero-left">
           <div style={{ ...card }} className="aero-header">
             <div style={{ minWidth: 250, marginRight: "auto" }}>
-              <div style={{ fontSize: 27, fontWeight: 950, letterSpacing: 1.6, color: COLORS.cyan }}>AEROAXEN RESILIENCE LAB</div>
+              <div style={{ fontSize: 27, fontWeight: 950, letterSpacing: 1.6, color: COLORS.cyan }}>ZYRNAV RESILIENCE LAB</div>
               <div style={{ fontSize: 12, color: COLORS.dim, marginTop: 3 }}>Defensive PNT integrity + swarm recovery simulation</div>
             </div>
             <Pill label={running ? "MISSION RUNNING" : phase.key === "complete" ? "RUN COMPLETE" : "READY"} color={running ? COLORS.teal : COLORS.blue} />
