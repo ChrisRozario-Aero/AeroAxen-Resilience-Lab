@@ -13,12 +13,10 @@
 
 ## Live Demo
 
-**PASTE_NEW_ZYRNAV_VERCEL_URL_HERE**
+**https://zyrnav-resilience-lab.vercel.app**
 
 **GitHub Repository:**  
 https://github.com/ChrisRozario-Aero/ZYRNAV-Resilience-Lab
-
-https://zyrnav-resilience-lab.vercel.app
 
 ---
 
@@ -443,7 +441,7 @@ dist/
 ZYRNAV is deployed through **Vercel**.
 
 **Production Application:**  
-PASTE_NEW_ZYRNAV_VERCEL_URL_HERE
+https://zyrnav-resilience-lab.vercel.app
 
 The GitHub `main` branch is connected directly to Vercel.
 
@@ -596,7 +594,7 @@ The current application provides an interactive environment for visualizing, tes
 https://github.com/ChrisRozario-Aero/ZYRNAV-Resilience-Lab
 
 **Live Application:**  
-PASTE_NEW_ZYRNAV_VERCEL_URL_HERE
+https://zyrnav-resilience-lab.vercel.app
 
 ---
 
