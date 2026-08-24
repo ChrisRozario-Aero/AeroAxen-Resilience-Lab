@@ -1182,23 +1182,27 @@ export default function AeroAxen3DSimulation() {
   };
 
   return (
-    <div className="aero-root" style={{ minHeight: "100vh", background: COLORS.bg, color: COLORS.text, fontFamily: "Inter, ui-sans-serif, system-ui", overflow: "auto" }}>
+    <div className="aero-root" style={{ minHeight: "100vh", width: "100%", background: COLORS.bg, color: COLORS.text, fontFamily: "Inter, ui-sans-serif, system-ui", overflowX: "hidden" }}>
       <style>{`
         *{box-sizing:border-box}
-        .aero-shell{min-height:100vh;display:grid;grid-template-columns:minmax(0,1fr) minmax(330px,390px);gap:12px;padding:12px;max-width:1800px;margin:0 auto}
-        .aero-left{display:grid;grid-template-rows:auto minmax(440px,1fr) auto;gap:12px;min-width:0}
-        .aero-side{display:grid;grid-template-rows:auto auto minmax(420px,1fr);gap:12px;min-height:0}
-        .aero-header{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+        html,body,#root{width:100%;min-width:0;overflow-x:hidden}
+        .aero-shell{min-height:100vh;width:100%;display:grid;grid-template-columns:minmax(0,3fr) minmax(420px,2fr);gap:14px;padding:14px;max-width:1920px;margin:0 auto;align-items:start}
+        .aero-left{display:grid;grid-template-rows:auto auto auto;gap:12px;min-width:0;align-self:start}
+        .aero-side{display:grid;grid-template-rows:auto auto auto;gap:12px;min-width:0;min-height:0;align-content:start;align-self:start}
+        .aero-header{display:flex;align-items:center;gap:12px;flex-wrap:wrap;min-width:0}
         .aero-minis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-        .aero-two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-        .aero-phase{display:grid;grid-template-columns:repeat(8,minmax(76px,1fr));gap:6px;overflow-x:auto;padding-bottom:2px}
-        .aero-canvas{width:100%;height:100%;min-height:440px;display:block;cursor:pointer}
+        .aero-minis>*{min-width:0}
+        .aero-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+        .aero-phase{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding-bottom:2px}
+        .aero-canvas{width:100%;height:auto;aspect-ratio:980/620;display:block;cursor:pointer}
         .aero-scroll{min-height:0;overflow:auto}
-        button,select,input{font:inherit}
+        .aero-side>div{min-width:0}
+        button,select,input{font:inherit;max-width:100%}
         button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid #00D8FF;outline-offset:2px}
-        @media(max-width:1120px){.aero-shell{grid-template-columns:1fr}.aero-side{grid-template-columns:1fr 1fr;grid-template-rows:auto auto}.aero-side>div:last-child{grid-column:1/-1}.aero-left{grid-template-rows:auto 560px auto}}
-        @media(max-width:760px){.aero-shell{padding:8px}.aero-side{display:grid;grid-template-columns:1fr}.aero-side>div:last-child{grid-column:auto}.aero-minis{grid-template-columns:1fr 1fr}.aero-two{grid-template-columns:1fr}.aero-left{grid-template-rows:auto 470px auto}.aero-canvas{min-height:470px}.aero-header{align-items:flex-start}}
-        @media(max-width:520px){.aero-minis{grid-template-columns:1fr}.aero-left{grid-template-rows:auto 430px auto}.aero-canvas{min-height:430px}}
+        @media(max-width:1280px){.aero-shell{grid-template-columns:minmax(0,1.35fr) minmax(390px,1fr);padding:12px;gap:12px}.aero-phase{grid-template-columns:repeat(3,minmax(0,1fr))}}
+        @media(max-width:1040px){.aero-shell{grid-template-columns:1fr}.aero-side{grid-template-columns:1fr 1fr;grid-template-rows:auto auto}.aero-side>div:last-child{grid-column:1/-1}.aero-phase{grid-template-columns:repeat(4,minmax(0,1fr))}}
+        @media(max-width:760px){.aero-shell{padding:8px}.aero-side{display:grid;grid-template-columns:1fr}.aero-side>div:last-child{grid-column:auto}.aero-minis{grid-template-columns:1fr 1fr}.aero-two{grid-template-columns:1fr}.aero-phase{grid-template-columns:repeat(2,minmax(0,1fr))}.aero-header{align-items:flex-start}}
+        @media(max-width:520px){.aero-minis{grid-template-columns:1fr}.aero-phase{grid-template-columns:1fr}}
       `}</style>
 
       <div className="aero-shell">
