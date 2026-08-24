@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 // Responsive dashboard layout update
 
 /**
- * Zyrnav Resilience Lab v2
+ * ZYRNAV Resilience Lab v2
  * Defensive simulation-only prototype for GNSS/PNT integrity and swarm recovery.
  *
  * Demonstrates:
@@ -1066,7 +1066,7 @@ export default function Zyrnav3DSimulation() {
     samples.forEach((sample) => {
       sample.nodes.forEach((n) => {
         rows.push([
-          "Zyrnav_Resilience_Lab_simulated_telemetry",
+          "ZYRNAV_Resilience_Lab_simulated_telemetry",
           sample.wall,
           fmt(sample.simTime, 2),
           scenario.label,
@@ -1184,32 +1184,32 @@ export default function Zyrnav3DSimulation() {
   };
 
   return (
-    <div className="aero-root" style={{ minHeight: "100vh", width: "100%", background: COLORS.bg, color: COLORS.text, fontFamily: "Inter, ui-sans-serif, system-ui", overflowX: "hidden" }}>
+    <div className="zyrnav-root" style={{ minHeight: "100vh", width: "100%", background: COLORS.bg, color: COLORS.text, fontFamily: "Inter, ui-sans-serif, system-ui", overflowX: "hidden" }}>
       <style>{`
         *{box-sizing:border-box}
         html,body,#root{width:100%;min-width:0;overflow-x:hidden}
-        .aero-shell{min-height:100vh;width:100%;display:grid;grid-template-columns:minmax(0,3fr) minmax(420px,2fr);gap:14px;padding:14px;max-width:1920px;margin:0 auto;align-items:start}
-        .aero-left{display:grid;grid-template-rows:auto auto auto;gap:12px;min-width:0;align-self:start}
-        .aero-side{display:grid;grid-template-rows:auto auto auto;gap:12px;min-width:0;min-height:0;align-content:start;align-self:start}
-        .aero-header{display:flex;align-items:center;gap:12px;flex-wrap:wrap;min-width:0}
-        .aero-minis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-        .aero-minis>*{min-width:0}
-        .aero-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
-        .aero-phase{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding-bottom:2px}
-        .aero-canvas{width:100%;height:auto;aspect-ratio:980/620;display:block;cursor:pointer}
-        .aero-scroll{min-height:0;overflow:auto}
-        .aero-side>div{min-width:0}
+        .zyrnav-shell{min-height:100vh;width:100%;display:grid;grid-template-columns:minmax(0,3fr) minmax(420px,2fr);gap:14px;padding:14px;max-width:1920px;margin:0 auto;align-items:start}
+        .zyrnav-left{display:grid;grid-template-rows:auto auto auto;gap:12px;min-width:0;align-self:start}
+        .zyrnav-side{display:grid;grid-template-rows:auto auto auto;gap:12px;min-width:0;min-height:0;align-content:start;align-self:start}
+        .zyrnav-header{display:flex;align-items:center;gap:12px;flex-wrap:wrap;min-width:0}
+        .zyrnav-minis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+        .zyrnav-minis>*{min-width:0}
+        .zyrnav-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+        .zyrnav-phase{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding-bottom:2px}
+        .zyrnav-canvas{width:100%;height:auto;aspect-ratio:980/620;display:block;cursor:pointer}
+        .zyrnav-scroll{min-height:0;overflow:auto}
+        .zyrnav-side>div{min-width:0}
         button,select,input{font:inherit;max-width:100%}
         button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid #00D8FF;outline-offset:2px}
-        @media(max-width:1280px){.aero-shell{grid-template-columns:minmax(0,1.35fr) minmax(390px,1fr);padding:12px;gap:12px}.aero-phase{grid-template-columns:repeat(3,minmax(0,1fr))}}
-        @media(max-width:1040px){.aero-shell{grid-template-columns:1fr}.aero-side{grid-template-columns:1fr 1fr;grid-template-rows:auto auto}.aero-side>div:last-child{grid-column:1/-1}.aero-phase{grid-template-columns:repeat(4,minmax(0,1fr))}}
-        @media(max-width:760px){.aero-shell{padding:8px}.aero-side{display:grid;grid-template-columns:1fr}.aero-side>div:last-child{grid-column:auto}.aero-minis{grid-template-columns:1fr 1fr}.aero-two{grid-template-columns:1fr}.aero-phase{grid-template-columns:repeat(2,minmax(0,1fr))}.aero-header{align-items:flex-start}}
-        @media(max-width:520px){.aero-minis{grid-template-columns:1fr}.aero-phase{grid-template-columns:1fr}}
+        @media(max-width:1280px){.zyrnav-shell{grid-template-columns:minmax(0,1.35fr) minmax(390px,1fr);padding:12px;gap:12px}.zyrnav-phase{grid-template-columns:repeat(3,minmax(0,1fr))}}
+        @media(max-width:1040px){.zyrnav-shell{grid-template-columns:1fr}.zyrnav-side{grid-template-columns:1fr 1fr;grid-template-rows:auto auto}.zyrnav-side>div:last-child{grid-column:1/-1}.zyrnav-phase{grid-template-columns:repeat(4,minmax(0,1fr))}}
+        @media(max-width:760px){.zyrnav-shell{padding:8px}.zyrnav-side{display:grid;grid-template-columns:1fr}.zyrnav-side>div:last-child{grid-column:auto}.zyrnav-minis{grid-template-columns:1fr 1fr}.zyrnav-two{grid-template-columns:1fr}.zyrnav-phase{grid-template-columns:repeat(2,minmax(0,1fr))}.zyrnav-header{align-items:flex-start}}
+        @media(max-width:520px){.zyrnav-minis{grid-template-columns:1fr}.zyrnav-phase{grid-template-columns:1fr}}
       `}</style>
 
-      <div className="aero-shell">
-        <div className="aero-left">
-          <div style={{ ...card }} className="aero-header">
+      <div className="zyrnav-shell">
+        <div className="zyrnav-left">
+          <div style={{ ...card }} className="zyrnav-header">
             <div style={{ minWidth: 250, marginRight: "auto" }}>
               <div style={{ fontSize: 27, fontWeight: 950, letterSpacing: 1.6, color: COLORS.cyan }}>ZYRNAV RESILIENCE LAB</div>
               <div style={{ fontSize: 12, color: COLORS.dim, marginTop: 3 }}>Defensive PNT integrity + swarm recovery simulation</div>
@@ -1223,14 +1223,14 @@ export default function Zyrnav3DSimulation() {
           </div>
 
           <div style={{ ...card, padding: 0, overflow: "hidden", position: "relative" }}>
-            <canvas ref={canvasRef} width={CANVAS_W} height={CANVAS_H} className="aero-canvas" onClick={handleCanvasClick} title="Click a drone to inspect it" />
+            <canvas ref={canvasRef} width={CANVAS_W} height={CANVAS_H} className="zyrnav-canvas" onClick={handleCanvasClick} title="Click a drone to inspect it" />
             <div style={{ position: "absolute", right: 12, bottom: 12, maxWidth: 315, background: "rgba(2,11,22,0.86)", border: "1px solid rgba(0,216,255,0.2)", borderRadius: 12, padding: "9px 11px", fontSize: 11, color: COLORS.dim, pointerEvents: "none" }}>
               <b style={{ color: COLORS.cyan }}>{scenario.label}</b><br />
               Click a drone for evidence-level inspection. Red/orange means reduced trust, not automatic physical failure.
             </div>
           </div>
 
-          <div className="aero-minis">
+          <div className="zyrnav-minis">
             <Mini title="Fleet Trust" data={history.trust} color={trustColor(avgTrust)} value={`${avgTrust}%`} />
             <Mini title="PNT Integrity" data={history.integrity} color={trustColor(avgPnt)} value={`${avgPnt}%`} />
             <Mini title="Link Health" data={history.link} color={avgLink < 50 ? COLORS.orange : COLORS.cyan} value={`${avgLink}%`} />
@@ -1238,7 +1238,7 @@ export default function Zyrnav3DSimulation() {
           </div>
         </div>
 
-        <div className="aero-side">
+        <div className="zyrnav-side">
           <div style={card}>
             <div style={sectionTitle}>Scenario + Mission Controls</div>
             <label style={label}>World-scenario preset</label>
@@ -1251,7 +1251,7 @@ export default function Zyrnav3DSimulation() {
               <div style={{ fontSize: 11, color: COLORS.dim, lineHeight: 1.5, marginTop: 5 }}>{scenario.mission}</div>
             </div>
 
-            <div className="aero-two" style={{ marginTop: 8 }}>
+            <div className="zyrnav-two" style={{ marginTop: 8 }}>
               <div>
                 <label style={label}>Threat model</label>
                 <select value={config.attackType} onChange={(e) => setConfig((c) => ({ ...c, attackType: e.target.value }))} style={input} disabled={running}>
@@ -1278,11 +1278,11 @@ export default function Zyrnav3DSimulation() {
               <Toggle label="Swarm self-healing relay" checked={config.selfHealing} onChange={(v) => setConfig((c) => ({ ...c, selfHealing: v }))} detail="Healthy nodes reform altitude/relay geometry." />
             </div>
 
-            <div className="aero-two" style={{ marginTop: 9 }}>
+            <div className="zyrnav-two" style={{ marginTop: 9 }}>
               {!running ? <button onClick={simTime > 0 && simTime < 36 ? resumeMission : startMission} style={button(COLORS.teal)}>{simTime > 0 && simTime < 36 ? "Resume Mission" : "Start Mission"}</button> : <button onClick={pauseMission} style={button(COLORS.orange)}>Pause Mission</button>}
               <button onClick={resetMission} style={button(COLORS.blue)}>Reset</button>
             </div>
-            <div className="aero-two">
+            <div className="zyrnav-two">
               <div>
                 <label style={label}>Playback speed: {speed}x</label>
                 <input type="range" min="0.5" max="2" step="0.5" value={speed} onChange={(e) => setSpeed(Number(e.target.value))} style={{ width: "100%" }} />
@@ -1291,7 +1291,7 @@ export default function Zyrnav3DSimulation() {
             </div>
 
             <div style={{ ...sectionTitle, marginTop: 12, marginBottom: 6 }}>Interactive Mission Timeline</div>
-            <div className="aero-phase">
+            <div className="zyrnav-phase">
               {PHASES.filter((p) => p.key !== "complete").map((p) => (
                 <button key={p.key} onClick={() => jumpTo(p.start)} style={{ ...smallBtn, borderColor: phase.key === p.key ? COLORS.cyan : "rgba(0,216,255,0.2)", color: phase.key === p.key ? COLORS.white : COLORS.cyan, background: phase.key === p.key ? "rgba(0,216,255,0.14)" : "#020B16" }}>{p.label}</button>
               ))}
@@ -1308,7 +1308,7 @@ export default function Zyrnav3DSimulation() {
               </div>
               <Pill label={inspected.threatLevel} color={threatColor(inspected.threatLevel)} />
             </div>
-            <div className="aero-two" style={{ marginTop: 10 }}>
+            <div className="zyrnav-two" style={{ marginTop: 10 }}>
               <Info label="Trust" value={`${inspected.trust}%`} color={trustColor(inspected.trust)} />
               <Info label="PNT integrity" value={`${inspected.pntIntegrity}%`} color={trustColor(inspected.pntIntegrity)} />
               <Info label="Link health" value={`${inspected.linkHealth}%`} color={inspected.linkHealth < 50 ? COLORS.orange : COLORS.cyan} />
@@ -1333,11 +1333,11 @@ export default function Zyrnav3DSimulation() {
               <div style={sectionTitle}>Live Fleet Telemetry</div>
               <span style={{ fontSize: 10, color: COLORS.dim }}>Click a card or drone to inspect</span>
             </div>
-            <div className="aero-scroll" style={{ maxHeight: 330, display: "grid", gap: 8, paddingRight: 2 }}>
+            <div className="zyrnav-scroll" style={{ maxHeight: 330, display: "grid", gap: 8, paddingRight: 2 }}>
               {nodes.map((n) => <Node key={n.id} n={n} threshold={config.threshold} selected={n.id === selectedNodeId} onClick={() => setSelectedNodeId(n.id)} />)}
             </div>
             <div style={{ ...sectionTitle, marginTop: 12 }}>Mission Event Log</div>
-            <div className="aero-scroll" style={{ height: 190, borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 8 }}>
+            <div className="zyrnav-scroll" style={{ height: 190, borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 8 }}>
               {logs.map((l, i) => <Log key={i} item={l} />)}
             </div>
           </div>
