@@ -9,6 +9,14 @@
 
 **GNSS/PNT Integrity • Peer Validation • Sensor-Fusion Fallback • Autonomous Swarm Recovery**
 
+## Project Ownership
+
+**Project:** ZYRNAV  
+**Type:** Independent Aerospace & Autonomous Systems Project  
+**Developer:** Chris Matheus Rozario  
+**Status:** Active Portfolio / Research Prototype  
+**Initial Public Release:** v1.0.0
+
 ---
 
 ## Live Demo
@@ -623,3 +631,23 @@ ZYRNAV is a simulation-oriented research prototype.
 The current telemetry, threat events, navigation behavior, trust calculations, and recovery responses are generated for visualization and experimental demonstration purposes.
 
 They should not be interpreted as certified avionics behavior, verified operational cybersecurity performance, or real-world flight-test results.
+
+
+## Copyright & Usage
+
+Copyright © 2026 Chris Matheus Rozario. All rights reserved.
+
+ZYRNAV is an independent portfolio and research project developed by
+Chris Matheus Rozario.
+
+The source code, simulation architecture, documentation, interface design,
+visualizations, and original project materials are provided publicly for
+educational demonstration, portfolio review, and research evaluation.
+
+No permission is granted to rebrand, redistribute, sell, sublicense,
+commercialize, or represent this project or substantial portions of its
+original work as another person's or organization's own product without
+prior written permission from the copyright owner.
+
+Third-party libraries and dependencies remain subject to their respective
+licenses.
