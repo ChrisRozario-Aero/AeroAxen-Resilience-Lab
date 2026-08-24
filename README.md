@@ -15,6 +15,24 @@
 
 **https://zyrnav-resilience-lab.vercel.app**
 
+## Dashboard Preview
+
+<p align="center">
+  <a href="https://zyrnav-resilience-lab.vercel.app">
+    <img
+      src="assets/zyrnav-dashboard.png"
+      alt="ZYRNAV PNT Resilience System Dashboard"
+      width="100%"
+    />
+  </a>
+</p>
+
+<p align="center">
+  <em>Interactive GNSS/PNT integrity monitoring, threat simulation, peer validation, sensor-fusion fallback, and autonomous swarm recovery.</em>
+</p>
+
+---
+
 **GitHub Repository:**  
 https://github.com/ChrisRozario-Aero/ZYRNAV-Resilience-Lab
 
